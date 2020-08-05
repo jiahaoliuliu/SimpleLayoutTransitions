@@ -20,10 +20,5 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include layout="@layout/layout_full_screen_bottom_sheet" />
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <include layout="@layout/layout_full_screen_bottom_sheet" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
