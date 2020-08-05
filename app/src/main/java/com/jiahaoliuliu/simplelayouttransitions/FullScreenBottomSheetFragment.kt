@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 /**
@@ -20,7 +21,12 @@ class FullScreenBottomSheetFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_full_screen_bottom_sheet, container, false)
+        val view =  inflater.inflate(R.layout.fragment_full_screen_bottom_sheet, container, false)
+        view.findViewById<Button>(R.id.show_first_modal_bottom_sheet).setOnClickListener {
+            showFirstModalBottomSheet()
+        }
+
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,5 +51,9 @@ class FullScreenBottomSheetFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun showFirstModalBottomSheet() {
+        // TODO
     }
 }
