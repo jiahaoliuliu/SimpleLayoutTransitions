@@ -2,5 +2,9 @@
     <string name="app_name">SimpleLayoutTransitions</string>
     <string name="show_full_screen_bottom_sheet">Show bottom sheet</string>
     <string name="drag_me_up">Drag me up</string>
+    <string name="first_modal_bottom_sheet">First modal bottom sheet</string>
+    <string name="second_modal_bottom_sheet">Second modal bottom sheet</string>
     <string name="show_first_modal_bottom_sheet">Show first modal bottom sheet</string>
+    <string name="show_second_modal_bottom_sheet">Show second modal bottom sheet</string>
+    <string name="back">Back</string>
 </resources>

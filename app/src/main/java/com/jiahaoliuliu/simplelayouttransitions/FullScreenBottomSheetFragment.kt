@@ -9,12 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class FullScreenBottomSheetFragment : Fragment() {
 
-    lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -54,6 +51,7 @@ class FullScreenBottomSheetFragment : Fragment() {
     }
 
     private fun showFirstModalBottomSheet() {
-        // TODO
+        val firstModalBottomSheetFragment = FirstModalBottomSheetFragment()
+        firstModalBottomSheetFragment.show(activity!!.supportFragmentManager, firstModalBottomSheetFragment.tag)
     }
 }
