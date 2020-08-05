@@ -32,7 +32,7 @@ class FullScreenBottomSheetFragment : Fragment() {
     }
 
     private fun setUpBottomSheet() {
-        bottomSheetBehavior = BottomSheetBehavior.from(requireActivity().findViewById(R.id.floating_ice_remote_main_layout))
+        bottomSheetBehavior = BottomSheetBehavior.from(requireActivity().findViewById(R.id.bottom_sheet_fragment_container))
         bottomSheetBehavior.setBottomSheetCallback(object: BottomSheetBehavior.BottomSheetCallback() {
             override fun onSlide(view: View, slideOffset: Float) {
                 // Not do anything

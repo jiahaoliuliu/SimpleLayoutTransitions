@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private fun showFullScreenBottomSheet() {
         val fragment = FullScreenBottomSheetFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment,
+        transaction.replace(R.id.bottom_sheet_fragment_container, fragment,
             FullScreenBottomSheetFragment::class.java.name)
         transaction.commit()
     }
