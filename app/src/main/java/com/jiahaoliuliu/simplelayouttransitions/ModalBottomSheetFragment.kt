@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class ModalBottomSheetFragment : BottomSheetDialogFragment(), OnShowFirstModalBottomSheetFragmentRequested, OnShowSecondModalBottomSheetFragmentRequested {
+class ModalBottomSheetFragment : BottomSheetDialogFragment(),
+    OnShowFirstModalBottomSheetFragmentRequested, OnShowSecondModalBottomSheetFragmentRequested,
+    OnDismissRequested {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,7 +25,7 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment(), OnShowFirstModalBo
     }
 
     override fun showFirstModalBottomSheetFragment() {
-        val firstModalBottomSheetFragment = FirstModalBottomSheetFragment(this)
+        val firstModalBottomSheetFragment = FirstModalBottomSheetFragment(this, this)
         val ft = childFragmentManager.beginTransaction()
         ft.replace(R.id.modal_bottom_sheet_container, firstModalBottomSheetFragment)
         ft.commit()
@@ -43,4 +45,8 @@ interface OnShowSecondModalBottomSheetFragmentRequested {
 
 interface OnShowFirstModalBottomSheetFragmentRequested {
     fun showFirstModalBottomSheetFragment()
+}
+
+interface OnDismissRequested {
+    fun dismiss()
 }

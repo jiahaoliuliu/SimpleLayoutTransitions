@@ -12,7 +12,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class FirstModalBottomSheetFragment(
     private val onShowSecondModalBottomSheetFragmentRequested:
-                OnShowSecondModalBottomSheetFragmentRequested) : Fragment() {
+                OnShowSecondModalBottomSheetFragmentRequested,
+    private val onDismissRequested: OnDismissRequested) : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +23,9 @@ class FirstModalBottomSheetFragment(
         val view = inflater.inflate(R.layout.fragment_first_modal_bottom_sheet, container, false)
         view.findViewById<Button>(R.id.show_second_modal_bottom_sheet).setOnClickListener {
             onShowSecondModalBottomSheetFragmentRequested.showSecondModalBottomSheetFragment()
+        }
+        view.findViewById<Button>(R.id.done_button).setOnClickListener {
+            onDismissRequested.dismiss()
         }
         return view
     }
