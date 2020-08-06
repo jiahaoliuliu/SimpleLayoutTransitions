@@ -4,5 +4,5 @@
     android:id="@+id/modal_bottom_sheet_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:background="@android:color/holo_red_light">
 </FrameLayout>

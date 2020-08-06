@@ -24,16 +24,21 @@ class ModalBottomSheetFragment : BottomSheetDialogFragment(),
         showFirstModalBottomSheetFragment()
     }
 
-    override fun showFirstModalBottomSheetFragment() {
+    override fun showFirstModalBottomSheetFragment(withAnimation: Boolean) {
         val firstModalBottomSheetFragment = FirstModalBottomSheetFragment(this, this)
         val ft = childFragmentManager.beginTransaction()
+        if (withAnimation) {
+            ft.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+        }
         ft.replace(R.id.modal_bottom_sheet_container, firstModalBottomSheetFragment)
+        ft.addToBackStack(tag);
         ft.commit()
     }
 
     override fun showSecondModalBottomSheetFragment() {
         val secondModalBottomSheetFragment = SecondModalBottomSheetFragment(this)
         val ft = childFragmentManager.beginTransaction()
+        ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
         ft.replace(R.id.modal_bottom_sheet_container, secondModalBottomSheetFragment)
         ft.commit()
     }
@@ -44,7 +49,7 @@ interface OnShowSecondModalBottomSheetFragmentRequested {
 }
 
 interface OnShowFirstModalBottomSheetFragmentRequested {
-    fun showFirstModalBottomSheetFragment()
+    fun showFirstModalBottomSheetFragment(withAnimation: Boolean = false)
 }
 
 interface OnDismissRequested {

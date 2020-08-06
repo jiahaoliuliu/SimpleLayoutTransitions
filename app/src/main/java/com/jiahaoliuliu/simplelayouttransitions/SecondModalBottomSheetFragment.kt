@@ -22,7 +22,7 @@ class SecondModalBottomSheetFragment(
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_second_modal_bottom_sheet, container, false)
         view.findViewById<Button>(R.id.back).setOnClickListener{
-            onShowFirstModalBottomSheetFragmentRequested.showFirstModalBottomSheetFragment()
+            onShowFirstModalBottomSheetFragmentRequested.showFirstModalBottomSheetFragment(withAnimation = true)
         }
         return view
     }
