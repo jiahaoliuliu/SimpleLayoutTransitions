@@ -21,7 +21,7 @@ class FullScreenBottomSheetFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_full_screen_bottom_sheet, container, false)
         view.findViewById<Button>(R.id.show_first_modal_bottom_sheet).setOnClickListener {
-            showFirstModalBottomSheet()
+            showModalBottomSheet()
         }
 
         return view
@@ -51,8 +51,8 @@ class FullScreenBottomSheetFragment : Fragment() {
         })
     }
 
-    private fun showFirstModalBottomSheet() {
-        val firstModalBottomSheetFragment = FirstModalBottomSheetFragment()
-        firstModalBottomSheetFragment.show(activity!!.supportFragmentManager, firstModalBottomSheetFragment.tag)
+    private fun showModalBottomSheet() {
+        val modalBottomSheetFragment = ModalBottomSheetFragment()
+        modalBottomSheetFragment.show(activity!!.supportFragmentManager, modalBottomSheetFragment.tag)
     }
 }
